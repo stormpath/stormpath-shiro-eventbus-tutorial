@@ -30,7 +30,7 @@
     <properties>
         <slf4j.version>1.6.4</slf4j.version>
         <shiro.version>1.3.0</shiro.version>
-
+        <main.class>PizzaViaEventBus</main.class>
     </properties>
 
     <build>
@@ -48,7 +48,7 @@
                 </executions>
                 <configuration>
                     <classpathScope>test</classpathScope>
-                    <mainClass>Quickstart</mainClass>
+                    <mainClass>${main.class}</mainClass>
                 </configuration>
             </plugin>
         </plugins>
@@ -88,5 +88,14 @@
             <scope>runtime</scope>
         </dependency>
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>quick</id>
+            <properties>
+                <main.class>Quickstart</main.class>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>
